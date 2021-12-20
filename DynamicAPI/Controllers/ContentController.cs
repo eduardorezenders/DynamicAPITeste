@@ -12,9 +12,7 @@ namespace DynamicAPI.Controllers {
     public class ContentController : ControllerBase {
 
         [HttpPost]
-        public JObject PostContent(ContentModel content) {
-
-            JObject d = new JObject();
+        public dynamic PostContent(ContentModel content) {
 
             JArray conteudo = content.Conteudo;
 
@@ -44,11 +42,14 @@ namespace DynamicAPI.Controllers {
 
                     Arquivar.SalvarEmpresa(c);
 
+                } else
+                {
+                    return BadRequest(conteudo);
                 }
 
             }
 
-            return d;
+            return Ok(conteudo);
 
         }
 

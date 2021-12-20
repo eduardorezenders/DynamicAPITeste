@@ -1,3 +1,0 @@
-{"NomePessoa":"Daniel","Sobrenome":"Cintra"}
-{"NomePessoa":"Cristiane","Sobrenome":"Ranauro"}
-{"NomePessoa":"Rodrigo","Idade":"25","Sobrenome":"Menezes"}

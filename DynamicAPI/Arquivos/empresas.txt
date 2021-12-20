@@ -1,3 +1,0 @@
-{"NomeEmpresa":"Microsoft","Escopo":"Mundial"}
-{"NomeEmpresa":"Apple","Escopo":"Mundial"}
-{"NomeEmpresa":"Totvs","Fundação":"1985","Escopo":"Nacional"}
