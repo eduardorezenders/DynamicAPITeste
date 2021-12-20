@@ -1,0 +1,3 @@
+{"NomeSetor":"TI","Computadores":"5","Funcionarios":"20"}
+{"NomeSetor":"Administrativo","Funcionarios":"5"}
+{"NomeSetor":"RH","Funcionarios":"10"}
