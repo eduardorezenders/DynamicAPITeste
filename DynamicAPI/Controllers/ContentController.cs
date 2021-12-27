@@ -7,49 +7,50 @@ using Newtonsoft.Json.Linq;
 using DynamicAPI.Model;
 
 namespace DynamicAPI.Controllers {
+
     [Route("api/[controller]")]
     [ApiController]
     public class ContentController : ControllerBase {
 
         [HttpPost]
-        public dynamic PostContent(ContentModel content) {
+        public IActionResult PostContent(RequisicaoDataModel _requisicao) {
 
-            JArray conteudo = content.Conteudo;
+            RequisicaoModel data = new RequisicaoModel();
 
-            foreach (var item in conteudo) {
+            data.ConteudoEntrada = _requisicao.Conteudo;
 
+            /*foreach (var item in conteudo)
+            {
                 JObject c = new JObject();
 
-                if (item["NomePessoa"] != null) {
-
+                if (item["NomePessoa"] != null)
+                {
                     foreach (var i in item)
                         c.Add(i);
 
                     Arquivar.SalvarPessoa(c);
-
-
-                } else if (item["NomeSetor"] != null) {
-
+                }
+                else if (item["NomeSetor"] != null)
+                {
                     foreach (var i in item)
                         c.Add(i);
 
                     Arquivar.SalvarSetor(c);
-
-                } else if (item["NomeEmpresa"] != null) {
-
+                }
+                else if (item["NomeEmpresa"] != null)
+                {
                     foreach (var i in item)
                         c.Add(i);
 
                     Arquivar.SalvarEmpresa(c);
-
-                } else
+                }
+                else
                 {
                     return BadRequest(conteudo);
                 }
+            }*/
 
-            }
-
-            return Ok(conteudo);
+            return Ok(_requisicao);
 
         }
 
