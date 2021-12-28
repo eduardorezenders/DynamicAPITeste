@@ -10,14 +10,13 @@ namespace DynamicAPI.Controllers {
 
     [Route("api/[controller]")]
     [ApiController]
-    public class ContentController : ControllerBase {
-
+    public class ContentController : ControllerBase
+    {
         [HttpPost]
-        public IActionResult PostContent(RequisicaoDataModel _requisicao) {
-
-            RequisicaoModel data = new RequisicaoModel();
-
-            data.ConteudoEntrada = _requisicao.Conteudo;
+        public IActionResult PostContent(RequisicaoModel _requisicao)
+        {
+            dynamic jsonStr = JsonConvert.SerializeObject(_requisicao.ConteudoEntrada.Conteudo);
+            dynamic conteudo = JsonConvert.DeserializeObject<ExpandoObject>(jsonStr);
 
             /*foreach (var item in conteudo)
             {
@@ -50,9 +49,7 @@ namespace DynamicAPI.Controllers {
                 }
             }*/
 
-            return Ok(_requisicao);
-
+            return Ok(conteudo);
         }
-
     }
 }
